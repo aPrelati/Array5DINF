@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class ThirdActivity extends AppCompatActivity
@@ -17,6 +18,28 @@ public class ThirdActivity extends AppCompatActivity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_third);
+
+        imgFilm= findViewById(R.id.locandina);
+
+        String nomeFilm= getIntent().getStringExtra("key");
+
+        if(nomeFilm.equals("spiderman"))
+        {
+            imgFilm.setImageResource(R.drawable.spiderman);
+            Toast.makeText(getApplicationContext(), nomeFilm, Toast.LENGTH_LONG).show();
+        }
+
+        if(nomeFilm.equals("superman"))
+        {
+            imgFilm.setImageResource(R.drawable.superman);
+            Toast.makeText(getApplicationContext(), nomeFilm, Toast.LENGTH_LONG).show();
+        }
+
+        if(nomeFilm.equals("batman"))
+        {
+            imgFilm.setImageResource(R.drawable.batman);
+            Toast.makeText(getApplicationContext(), nomeFilm, Toast.LENGTH_LONG).show();
+        }
 
         //imgFilm = (ImageView) findViewById(R.drawable.vittoria);
 
@@ -42,11 +65,11 @@ public class ThirdActivity extends AppCompatActivity
         */
 
         //Bundle extras = getIntent().getExtras();
-        Blunde extras = getIntent().getExtras();
-        if(extras != null)
+        /*if(extras != null)
         {
-            String value = extras.getString("key");
-            Toast.makeText(getApplicationContext(), value, Toast.LENGTH_LONG).show();
+            //String value = extras.getString("key");
+
         }
+        */
     }
 }
