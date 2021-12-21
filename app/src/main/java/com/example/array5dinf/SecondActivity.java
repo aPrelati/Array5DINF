@@ -27,7 +27,7 @@ public class SecondActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
 
-        lvfilm = (ListView)findViewById(R.id.lvFilm);
+        lvfilm = (ListView) findViewById(R.id.lvFilm);
 
         ArrayAdapter<String> aaFilm = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, film); //è lui che ci popola la listview
 
@@ -41,14 +41,11 @@ public class SecondActivity extends AppCompatActivity
                 String titoloFilm= (String)lvfilm.getItemAtPosition(position); //faccio il cast a string perchè mi restituisce un oggetto
 
                 Log.d("Errore_Toast", "posizione: "+position);
-                //Toast.makeText(getApplicationContext(), titoloFilm, Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), titoloFilm, Toast.LENGTH_LONG).show();
 
-                Intent i = new Intent(SecondActivity.this, ThirdActivity.class);
+                Intent i= new Intent(SecondActivity.this, ThirdActivity.class);
                 i.putExtra("key", titoloFilm); //passo dei dati alla seconda activity
                 startActivity(i);
-
-
-
             }
         });
     }
